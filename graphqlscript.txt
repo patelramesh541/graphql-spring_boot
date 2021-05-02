@@ -1,0 +1,111 @@
+mutation {
+  createCompany(companyName:"J P Morgan", address:"US"){
+    id
+  }
+}
+
+
+mutation {
+ createCompany(companyName:"HSBC", address:"Hongkong"){
+    id
+  }
+  }
+
+
+  mutation {
+    createCompany(companyName:"Barclays", address:"UK"){
+      id
+    }
+  }
+
+  mutation {
+    createCompany(companyName:"UBS", address:"Swizerland"){
+      id
+    }
+  }
+
+
+  mutation {
+  createEmployee(empName:"Rajesh, Durg", salary:50000,occupation:"Software Engineer", company:4){
+    empName,
+    salary,
+    occupation,
+    company {
+      companyName,
+      employees
+    }
+  }
+  }
+
+  mutation {
+  createEmployee(empName:"Dipen Shah", salary:80000,occupation:"Software Engineer", company:4){
+    empName,
+    salary,
+    occupation,
+    company {
+      companyName,
+      employees
+
+    }
+  }
+  }
+
+
+
+  query {
+  getAllEmployees{
+    empName,
+    company {
+      id,
+      companyName,
+      address,
+      employees
+    }
+  }
+  }
+
+
+  query {
+  getAllEmployees{
+    empName,
+    company {
+      id,
+      companyName,
+      address,
+      employees
+    }
+  }
+
+    getCompanies {
+      id,
+      companyName,
+      address,
+      employees
+    }
+  }
+
+
+  query {
+
+    getEmployeeById(empId:5) {
+      id,
+      empName,
+      salary,
+      occupation,
+      company {
+        id
+      }
+    }
+
+  }
+
+
+  query {
+  getCompanyById(cId:1){
+    id,
+    companyName,
+    address,
+    employees
+  }
+
+  }
