@@ -1,0 +1,26 @@
+type Query {
+    getAllEmployees:[Employee]
+    getEmployeeById(empId:ID):Employee
+    getCompanies:[Company]
+    getCompanyById(cId:ID):Company
+}
+
+type Mutation{
+    createCompany(companyName: String!, address: String!): Company
+    createEmployee(empName: String!, salary: Int!, occupation: String!, company: Int!): Employee
+}
+
+type Employee {
+    id: ID!
+    empName: String!
+    salary: Int!
+    occupation: String!
+    company: Company!
+}
+
+type Company {
+    id: ID!
+    companyName: String!
+    address: String
+    employees: [String]!
+}
